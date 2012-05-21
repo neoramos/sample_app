@@ -1,20 +1,23 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.2.3'
+gem 'bootstrap-sass', '2.0.0'
+gem 'bcrypt-ruby', '3.0.1'
+
+group :development, :test do
+  gem 'sqlite3', '1.3.5'
+  gem 'rspec-rails', '2.9.0'
+  gem 'spork'
+  gem 'webrat'
+end
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-#Hook up RSpec2 with Rspe
-group :development do
-  gem 'rspec-rails'
-end
+gem 'jquery-rails', '2.0.0'
 
 group :test do
-  gem 'rspec-rails'
-  gem 'webrat'
+	gem 'capybara', '1.1.2'
 end
 
 
@@ -22,15 +25,13 @@ end
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails', '~> 3.2.2'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
