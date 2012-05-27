@@ -7,7 +7,7 @@ gem 'bcrypt-ruby', '3.0.1'
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
-  gem 'spork'
+  gem 'spork', '~> 1.0rc'
   gem 'webrat'
 end
 
