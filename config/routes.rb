@@ -1,5 +1,7 @@
 SampleApp::Application.routes.draw do
   
+  resources :users
+  
   #static pages:
   root to: 'pages#home'
   match '/about', to: 'pages#about'

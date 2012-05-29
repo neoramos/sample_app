@@ -9,4 +9,15 @@ describe "UserPages" do
     it { should have_selector('h1', content: 'Sign up') }
     it { should have_selector('title', content: title('Sign up')) }
   end
+  
+  describe "profile page" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit user_path(user) }
+
+    it {should have_selector('h1', content: user.name) }
+    it {should have_selector('title', content: user.name) }
+  end
+  
 end
+
+
