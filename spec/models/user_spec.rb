@@ -86,6 +86,7 @@ describe User do
   
   describe "return value of authenticate method" do
     before { @user.save }
+	#lazy load and cache :found_user
     let(:found_user) { User.find_by_email(@user.email) }
 
     describe "with valid password" do
