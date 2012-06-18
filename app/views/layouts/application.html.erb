@@ -2,17 +2,24 @@
 <html>
   <head>
     <title><%= title %></title>
-	<%= csrf_meta_tag %>
-	<%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-	<%= render 'layouts/shim' %>
+		<%= csrf_meta_tag %>
+		<%= stylesheet_link_tag 'application', media: 'all' %>
+		<%= javascript_include_tag 'application' %>
+		<%= render 'layouts/shim' %>
   </head>
   <body>
-  <%= render 'layouts/header' %>
-  <div class="container">
-	<%= yield %>
-	<%= render 'layouts/footer' %>
-	<%= debug(params) if Rails.env.development? %>
-  </div>
+		<%= render 'layouts/header' %>
+		
+		<div class="container">
+			<% flash.each do |key,value| %>
+				<div class="alert alert-<%= key %>">
+					<%= value%>
+				</div>
+			<% end %>
+			
+			<%= yield %>
+			<%= render 'layouts/footer' %>
+			<%= debug(params) if Rails.env.development? %>
+		</div>
   </body>
 </html>
